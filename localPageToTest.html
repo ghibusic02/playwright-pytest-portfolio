@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>My local page for tests</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .box { display: inline-block; width: 100px; height: 100px; border: 2px dashed #333; margin: 10px; text-align: center; line-height: 100px; font-weight: bold; background-color: #fff; }
+        #column-a { background-color: #ff9999; cursor: move; }
+        #column-b { background-color: #99ff99; }
+    </style>
+</head>
+<body>
+    <h1>Project - Advanced Elements</h1>
+    
+    <!-- Section 1: Upload File -->
+    <div style="margin-bottom: 40px; padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>1. Load a file</h3>
+        <input type="file" id="file-upload">
+        <button id="file-submit" onclick="document.getElementById('uploaded-files').innerText = document.getElementById('file-upload').files[0].name">Upload</button>
+        <p>Loaded file: <strong id="uploaded-files">None</strong></p>
+    </div>
+
+    <!-- Section 2: Drag and Drop -->
+    <div style="padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>2. Drag and Drop simulation(press the button to simulate the move)</h3>
+        <div id="column-a" class="box">A</div>
+        <div id="column-b" class="box">B</div>
+        <button id="simulate-drag" onclick="document.getElementById('column-a').innerText = 'B'; document.getElementById('column-b').innerText = 'A';">Simulează Mutarea</button>
+    </div>
+</body>
+</html>
