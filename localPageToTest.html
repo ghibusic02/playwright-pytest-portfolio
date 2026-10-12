@@ -2,31 +2,90 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <title>My local page for tests</title>
+    <title>Local Test Page</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
         .box { display: inline-block; width: 100px; height: 100px; border: 2px dashed #333; margin: 10px; text-align: center; line-height: 100px; font-weight: bold; background-color: #fff; }
         #column-a { background-color: #ff9999; cursor: move; }
         #column-b { background-color: #99ff99; }
+        
+        /* Styles for Hover Menu */
+        .dropdown { position: relative; display: inline-block; margin-top: 20px; }
+        .dropdown-content { display: none; position: absolute; background-color: #f1f1f1; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; }
+        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; }
+        .dropdown-content a:hover { background-color: #ddd; }
+        .dropdown:hover .dropdown-content { display: block; }
+        
+        /* Styles for the table */
+        table { font-family: arial, sans-serif; border-collapse: collapse; width: 100%; margin-top: 10px; }
+        td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+        tr:nth-child(even) { background-color: #dddddd; }
     </style>
 </head>
 <body>
-    <h1>Project - Advanced Elements</h1>
+    <h1>Advanced Elements for the project</h1>
     
     <!-- Section 1: Upload File -->
-    <div style="margin-bottom: 40px; padding: 15px; border: 1px solid #ccc; background: #fff;">
-        <h3>1. Load a file</h3>
+    <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>1. Load a file </h3>
         <input type="file" id="file-upload">
-        <button id="file-submit" onclick="document.getElementById('uploaded-files').innerText = document.getElementById('file-upload').files[0].name">Upload</button>
+        <button id="file-submit" onclick="document.getElementById('uploaded-files').innerText = 'test_fileName.txt'">Upload</button>
         <p>Loaded file: <strong id="uploaded-files">None</strong></p>
     </div>
 
     <!-- Section 2: Drag and Drop -->
-    <div style="padding: 15px; border: 1px solid #ccc; background: #fff;">
-        <h3>2. Drag and Drop simulation(press the button to simulate the move)</h3>
+    <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>2. Simulate Drag and Drop</h3>
         <div id="column-a" class="box">A</div>
         <div id="column-b" class="box">B</div>
         <button id="simulate-drag" onclick="document.getElementById('column-a').innerText = 'B'; document.getElementById('column-b').innerText = 'A';">Simulează Mutarea</button>
+    </div>
+
+    <!-- Section 3: Checkboxes -->
+    <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>3. Checkboxes</h3>
+        <label><input type="checkbox" id="checkbox-option"> I accept the terms and conditions</label>
+    </div>
+
+    <!-- Section 4: Radio Buttons -->
+    <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>4. Select the payment method (Radio Buttons)</h3>
+        <label><input type="radio" name="payment" id="radio-card" value="Card"> Credit Card</label><br>
+        <label><input type="radio" name="payment" id="radio-cash" value="Cash"> Cash on delivery</label>
+    </div>
+
+    <!-- Section 5: Hover Menu  -->
+    <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>5. Contextual Menu (Hover)</h3>
+        <div class="dropdown">
+            <button id="hover-menu-button" style="padding:10px; background:#007bff; color:white; border:none;">Treci cu mouse-ul aici</button>
+            <div class="dropdown-content" id="hover-content">
+                <a href="#" id="link-option-1">Option 1</a>
+                <a href="#" id="link-option-2">Option 2</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 6: Web Tables -->
+    <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background: #fff;">
+        <h3>6. Table with the employee (Web Tables)</h3>
+        <table id="table-employee">
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>City</th>
+          </tr>
+          <tr>
+            <td>Corina Ghibusi</td>
+            <td>QA Automation</td>
+            <td>Sibiu</td>
+          </tr>
+          <tr>
+            <td>Ion Popescu</td>
+            <td>Development</td>
+            <td>Bucuresti</td>
+          </tr>
+        </table>
     </div>
 </body>
 </html>
